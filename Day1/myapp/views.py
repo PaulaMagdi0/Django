@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# Create your views here.
 def home(request):
-    return render(request, 'home.html')  # Render the home.html template
+    # return HttpResponse("Hello, world! This is the home page.")
+    return render(request, "home.html")  # Renders the home template
 
-def dynamic_route(request, name):
-    return HttpResponse(f"<h1>Welcome, {name}!</h1>")  # Displays the dynamic value
+
+def contact(request,contact_id):
+    # return HttpResponse(f"Hello, world! This is the {name} page.")
+    context = {"name": contact_id}  # Passes 'name' to template
+    return render(request, "contact.html", context)

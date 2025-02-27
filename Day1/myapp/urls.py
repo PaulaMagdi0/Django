@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import home, dynamic_route  # Import both views
+from .views import home, contact  # Import your views 
 
 urlpatterns = [
-    path("", home, name="home"),  # Default homepage
-    path("<str:name>/", dynamic_route, name="dynamic"),  # Dynamic route
+    #Routes in = Node 
+    path("", home, name="home"),  # Root URL ("/") = My Home Function in views 
+    path('contact/<str:contact_id>/', contact, name='contact'),
 ]

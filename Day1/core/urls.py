@@ -15,11 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from myapp import views  # Replace 'myapp' with your actual app name
+from django.urls import path, include # Import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Home page
-    path('<str:name>/', views.dynamic_route, name='dynamic'),  # Dynamic route
+    path("", include("myapp.urls")),  # The Route To The App in my Case myapp
 ]
