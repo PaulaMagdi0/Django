@@ -4,5 +4,5 @@ from .views import home, contact  # Import your views
 urlpatterns = [
     #Routes in = Node 
     path("", home, name="home"),  # Root URL ("/") = My Home Function in views 
-    path('contact/<str:contact_id>/', contact, name='contact'),
+    path('contact/<int:contact_id>/', contact, name='contact'),
 ]
